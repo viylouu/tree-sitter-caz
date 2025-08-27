@@ -118,7 +118,24 @@ module.exports = grammar({
 
     prim_type: $ => choice(
       'raw',
-      'str'
+      'str',
+      'char',
+      'func',
+      'i8',
+      'i16',
+      'i32',
+      'i64',
+      'i128',
+      'u8',
+      'u16',
+      'u32',
+      'u64',
+      'u128',
+      'bool',
+      'f16',
+      'f32',
+      'f64',
+      'f128'
     ),
 
     _array_type: $ => choice(
