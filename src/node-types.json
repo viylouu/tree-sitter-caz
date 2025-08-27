@@ -58,6 +58,10 @@
     }
   },
   {
+    "type": "#imp",
+    "named": false
+  },
+  {
     "type": "::",
     "named": false
   },

@@ -20,7 +20,7 @@
 #define SUPERTYPE_COUNT 0
 
 enum ts_symbol_identifiers {
-  aux_sym_preproc_imp_token1 = 1,
+  anon_sym_POUNDimp = 1,
   anon_sym_LT = 2,
   anon_sym_GT = 3,
   anon_sym_as = 4,
@@ -38,7 +38,7 @@ enum ts_symbol_identifiers {
 
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
-  [aux_sym_preproc_imp_token1] = "preproc_imp_token1",
+  [anon_sym_POUNDimp] = "#imp",
   [anon_sym_LT] = "<",
   [anon_sym_GT] = ">",
   [anon_sym_as] = "as",
@@ -56,7 +56,7 @@ static const char * const ts_symbol_names[] = {
 
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
-  [aux_sym_preproc_imp_token1] = aux_sym_preproc_imp_token1,
+  [anon_sym_POUNDimp] = anon_sym_POUNDimp,
   [anon_sym_LT] = anon_sym_LT,
   [anon_sym_GT] = anon_sym_GT,
   [anon_sym_as] = anon_sym_as,
@@ -77,8 +77,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = true,
   },
-  [aux_sym_preproc_imp_token1] = {
-    .visible = false,
+  [anon_sym_POUNDimp] = {
+    .visible = true,
     .named = false,
   },
   [anon_sym_LT] = {
@@ -206,7 +206,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(ts_builtin_sym_end);
       END_STATE();
     case 7:
-      ACCEPT_TOKEN(aux_sym_preproc_imp_token1);
+      ACCEPT_TOKEN(anon_sym_POUNDimp);
       END_STATE();
     case 8:
       ACCEPT_TOKEN(anon_sym_LT);
@@ -270,7 +270,7 @@ static const TSLexerMode ts_lex_modes[STATE_COUNT] = {
 static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(0)] = {
     [ts_builtin_sym_end] = ACTIONS(1),
-    [aux_sym_preproc_imp_token1] = ACTIONS(1),
+    [anon_sym_POUNDimp] = ACTIONS(1),
     [anon_sym_LT] = ACTIONS(1),
     [anon_sym_GT] = ACTIONS(1),
     [anon_sym_as] = ACTIONS(1),
@@ -285,7 +285,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym__expr] = STATE(2),
     [aux_sym_source_file_repeat1] = STATE(2),
     [ts_builtin_sym_end] = ACTIONS(3),
-    [aux_sym_preproc_imp_token1] = ACTIONS(5),
+    [anon_sym_POUNDimp] = ACTIONS(5),
     [sym_ident] = ACTIONS(7),
     [sym_num] = ACTIONS(7),
   },
@@ -295,7 +295,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym__expr] = STATE(3),
     [aux_sym_source_file_repeat1] = STATE(3),
     [ts_builtin_sym_end] = ACTIONS(9),
-    [aux_sym_preproc_imp_token1] = ACTIONS(5),
+    [anon_sym_POUNDimp] = ACTIONS(5),
     [sym_ident] = ACTIONS(11),
     [sym_num] = ACTIONS(11),
   },
@@ -305,7 +305,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym__expr] = STATE(3),
     [aux_sym_source_file_repeat1] = STATE(3),
     [ts_builtin_sym_end] = ACTIONS(13),
-    [aux_sym_preproc_imp_token1] = ACTIONS(15),
+    [anon_sym_POUNDimp] = ACTIONS(15),
     [sym_ident] = ACTIONS(18),
     [sym_num] = ACTIONS(18),
   },
@@ -319,12 +319,12 @@ static const uint16_t ts_small_parse_table[] = {
       sym_ident,
     ACTIONS(21), 3,
       ts_builtin_sym_end,
-      aux_sym_preproc_imp_token1,
+      anon_sym_POUNDimp,
       sym_num,
   [12] = 1,
     ACTIONS(27), 4,
       ts_builtin_sym_end,
-      aux_sym_preproc_imp_token1,
+      anon_sym_POUNDimp,
       sym_ident,
       sym_num,
   [19] = 3,

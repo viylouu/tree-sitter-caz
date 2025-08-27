@@ -18,7 +18,7 @@ module.exports = grammar({
     _preproc: $ => choice($.preproc_imp),
 
     preproc_imp: $ => seq(
-      /#imp/,
+      '#imp',
       '<',
       $.resolve,
       '>',
