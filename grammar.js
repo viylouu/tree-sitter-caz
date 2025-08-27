@@ -13,7 +13,7 @@ module.exports = grammar({
   extras: $ => [/\s/],
 
   rules: {
-    source_file: $ => repeat(choice($.preproc_imp, $._expr)),
+    source_file: $ => repeat(choice($._preproc, $._expr)),
 
     _preproc: $ => choice($.preproc_imp),
 
