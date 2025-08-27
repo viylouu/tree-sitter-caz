@@ -220,6 +220,14 @@
           "named": true
         },
         {
+          "type": "import_imp",
+          "named": true
+        },
+        {
+          "type": "import_lib",
+          "named": true
+        },
+        {
           "type": "resolve",
           "named": true
         }
@@ -313,10 +321,6 @@
     }
   },
   {
-    "type": "#imp",
-    "named": false
-  },
-  {
     "type": "(",
     "named": false
   },
@@ -382,6 +386,14 @@
   },
   {
     "type": "ident",
+    "named": true
+  },
+  {
+    "type": "import_imp",
+    "named": true
+  },
+  {
+    "type": "import_lib",
     "named": true
   },
   {
