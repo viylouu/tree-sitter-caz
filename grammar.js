@@ -18,19 +18,19 @@ module.exports = grammar({
     _preproc: $ => choice($.preproc_imp),
 
     preproc_imp: $ => seq(
-      "#imp",
-      "<",
+      '#imp',
+      '<',
       $.resolve,
-      ">",
+      '>',
       optional(seq(
-        "as",
+        'as',
         $.ident
       ))
     ),
 
     resolve: $ => seq(
       $.ident,
-      repeat(seq("::", $.ident))
+      repeat(seq('::', $.ident))
     ),
 
     _expr: $ => choice(
