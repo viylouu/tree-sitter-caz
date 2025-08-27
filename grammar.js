@@ -90,12 +90,30 @@ module.exports = grammar({
     ),
 
     _type: $ => choice(
-      $.prim_type
+      $.prim_type,
+      $._array_type
     ),
 
     prim_type: $ => choice(
       'raw',
       'str'
+    ),
+
+    _array_type: $ => choice(
+      $.slice_type,
+      $.fixed_array_type
+    ),
+
+    slice_type: $ => seq(
+      '[]',
+      $._type
+    ),
+
+    fixed_array_type: $ => seq(
+      '[',
+      choice($.num, '*'),
+      ']',
+      $._type
     ),
 
     ident: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
