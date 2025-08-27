@@ -108,6 +108,10 @@
         {
           "type": "SYMBOL",
           "name": "func_call"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_lit"
         }
       ]
     },
@@ -465,6 +469,23 @@
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "string_lit": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "([^\"\\\\]|\\\\.)*"
+        },
+        {
+          "type": "STRING",
+          "value": "\""
         }
       ]
     },

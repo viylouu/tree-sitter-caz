@@ -36,7 +36,8 @@ module.exports = grammar({
     _expr: $ => choice(
       $.ident,
       $.num,
-      $.func_call
+      $.func_call,
+      $.string_lit
     ),
 
     _decl: $ => choice(
@@ -128,6 +129,12 @@ module.exports = grammar({
       '(',
       $.param_list,
       ')'
+    ),
+
+    string_lit: $ => seq(
+      '"',
+      /([^"\\]|\\.)*/,
+      '"'
     ),
 
     ident: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,

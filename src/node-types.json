@@ -45,6 +45,10 @@
         {
           "type": "num",
           "named": true
+        },
+        {
+          "type": "string_lit",
+          "named": true
         }
       ]
     }
@@ -195,6 +199,10 @@
         {
           "type": "num",
           "named": true
+        },
+        {
+          "type": "string_lit",
+          "named": true
         }
       ]
     }
@@ -303,6 +311,15 @@
         }
       ]
     }
+  },
+  {
+    "type": "string_lit",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "\"",
+    "named": false
   },
   {
     "type": "#imp",
