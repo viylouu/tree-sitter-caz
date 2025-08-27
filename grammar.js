@@ -119,7 +119,8 @@ module.exports = grammar({
 
     _type: $ => choice(
       $.prim_type,
-      $._array_type
+      $._array_type,
+      $.ident
     ),
 
     prim_type: $ => choice(

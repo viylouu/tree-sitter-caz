@@ -12,6 +12,10 @@
           "named": true
         },
         {
+          "type": "ident",
+          "named": true
+        },
+        {
           "type": "prim_type",
           "named": true
         },
@@ -86,6 +90,10 @@
       "types": [
         {
           "type": "fixed_array_type",
+          "named": true
+        },
+        {
+          "type": "ident",
           "named": true
         },
         {
@@ -183,6 +191,10 @@
       "types": [
         {
           "type": "fixed_array_type",
+          "named": true
+        },
+        {
+          "type": "ident",
           "named": true
         },
         {
@@ -376,6 +388,10 @@
           "named": true
         },
         {
+          "type": "ident",
+          "named": true
+        },
+        {
           "type": "prim_type",
           "named": true
         },
@@ -428,6 +444,10 @@
       "types": [
         {
           "type": "fixed_array_type",
+          "named": true
+        },
+        {
+          "type": "ident",
           "named": true
         },
         {

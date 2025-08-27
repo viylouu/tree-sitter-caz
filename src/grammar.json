@@ -463,6 +463,10 @@
         {
           "type": "SYMBOL",
           "name": "_array_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ident"
         }
       ]
     },
