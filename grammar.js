@@ -10,6 +10,8 @@
 module.exports = grammar({
   name: "caz",
 
+  extras: $ => [/\s/],
+
   rules: {
     source_file: $ => repeat(choice($._preproc, $._expr)),
 
