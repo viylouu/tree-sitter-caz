@@ -131,11 +131,11 @@ module.exports = grammar({
       ')'
     ),
 
-    string_lit: $ => seq(
+    string_lit: $ => token(seq(
       '"',
       /([^"\\]|\\.)*/,
       '"'
-    ),
+    )),
 
     ident: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
     num: $ => /[0-9]+/

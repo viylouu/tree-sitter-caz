@@ -313,15 +313,6 @@
     }
   },
   {
-    "type": "string_lit",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "\"",
-    "named": false
-  },
-  {
     "type": "#imp",
     "named": false
   },
@@ -404,6 +395,10 @@
   {
     "type": "str",
     "named": false
+  },
+  {
+    "type": "string_lit",
+    "named": true
   },
   {
     "type": "{",
