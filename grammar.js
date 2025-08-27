@@ -15,7 +15,7 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat(choice($._preproc, $._decl)),
 
-    _preproc: $ => choice($.preproc_pkg, $.preproc_extern),
+    _preproc: $ => choice($.preproc_pkg, $.preproc_extern, $.preproc_load),
 
     preproc_pkg: $ => seq(
       choice($.package_imp, $.package_lib),
@@ -42,6 +42,11 @@ module.exports = grammar({
       )),
     ),
 
+    preproc_load: $ => seq(
+      '#load',
+      $.param_list
+    ),
+
     resolve: $ => seq(
       $.ident,
       repeat(seq('::', $.ident))
@@ -51,7 +56,8 @@ module.exports = grammar({
       $.ident,
       $.num,
       $.func_call,
-      $.string_lit
+      $.string_lit,
+      $.preproc_load
     ),
 
     _decl: $ => choice(
@@ -140,7 +146,8 @@ module.exports = grammar({
 
     _array_type: $ => choice(
       $.slice_type,
-      $.fixed_array_type
+      $.fixed_array_type,
+      $.vector_type
     ),
 
     slice_type: $ => seq(
@@ -152,6 +159,13 @@ module.exports = grammar({
       '[',
       choice($.num, '*'),
       ']',
+      $._type
+    ),
+
+    vector_type: $ => seq(
+      '[<',
+      $.num,
+      '>]',
       $._type
     ),
 

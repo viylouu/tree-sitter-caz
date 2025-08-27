@@ -28,6 +28,10 @@
         {
           "type": "SYMBOL",
           "name": "preproc_extern"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "preproc_load"
         }
       ]
     },
@@ -132,6 +136,19 @@
         }
       ]
     },
+    "preproc_load": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#load"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "param_list"
+        }
+      ]
+    },
     "resolve": {
       "type": "SEQ",
       "members": [
@@ -175,6 +192,10 @@
         {
           "type": "SYMBOL",
           "name": "string_lit"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "preproc_load"
         }
       ]
     },
@@ -536,6 +557,10 @@
         {
           "type": "SYMBOL",
           "name": "fixed_array_type"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "vector_type"
         }
       ]
     },
@@ -575,6 +600,27 @@
         {
           "type": "STRING",
           "value": "]"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_type"
+        }
+      ]
+    },
+    "vector_type": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "[<"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "num"
+        },
+        {
+          "type": "STRING",
+          "value": ">]"
         },
         {
           "type": "SYMBOL",
