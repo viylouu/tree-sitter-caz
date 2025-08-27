@@ -11,6 +11,32 @@ module.exports = grammar({
   name: "caz",
 
   rules: {
-    source_file: $ => "hello"
+    source_file: $ => repeat(choice($._preproc, $._expr)),
+
+    _preproc: $ => choice($.preproc_imp),
+
+    preproc_imp: $ => seq(
+      "#imp",
+      "<",
+      $.resolve,
+      ">",
+      optional(seq(
+        "as",
+        $.ident
+      ))
+    ),
+
+    resolve: $ => seq(
+      $.ident,
+      repeat(seq("::", $.ident))
+    ),
+
+    _expr: $ => choice(
+      $.ident,
+      $.num
+    ),
+
+    ident: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
+    num: $ => /[0-9]+/
   }
 });
