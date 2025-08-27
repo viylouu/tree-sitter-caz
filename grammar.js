@@ -58,7 +58,7 @@ module.exports = grammar({
       seq(
         ':',
         $._type,
-        optional('~')
+        '~'
       )
     ),
 
@@ -73,7 +73,7 @@ module.exports = grammar({
 
     decl_param_list: $ => seq(
       '(',
-      seq($.decl_param, repeat(',', $.decl_param)),
+      seq($.decl_param, repeat(seq(',', $.decl_param))),
       ')'
     ),
 
@@ -83,11 +83,17 @@ module.exports = grammar({
       optional($._expr)
     ),
 
+    scope: $ => seq(
+      '{',
+      repeat(choice($._preproc, $._decl, $._expr)),
+      '}'
+    ),
+
     _type: $ => choice(
       $.prim_type
     ),
 
-    $.prim_type: $ => choice(
+    prim_type: $ => choice(
       'raw',
       'str'
     ),
