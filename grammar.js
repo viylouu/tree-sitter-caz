@@ -13,7 +13,7 @@ module.exports = grammar({
   extras: $ => [/\s/],
 
   rules: {
-    source_file: $ => repeat(choice($._preproc, $._decl, $._expr)),
+    source_file: $ => repeat(choice($._preproc, $._decl)),
 
     _preproc: $ => choice($.preproc_imp),
 
@@ -35,7 +35,8 @@ module.exports = grammar({
 
     _expr: $ => choice(
       $.ident,
-      $.num
+      $.num,
+      $.func_call
     ),
 
     _decl: $ => choice(
@@ -83,9 +84,15 @@ module.exports = grammar({
       optional($._expr)
     ),
 
+    param_list: $ => seq(
+      '(',
+      seq($._expr, repeat(seq(',', $._expr))),
+      ')'
+    ),
+
     scope: $ => seq(
       '{',
-      repeat(choice($._preproc, $._decl, $._expr)),
+      repeat(choice($._preproc, $._decl, $.func_call)),
       '}'
     ),
 
@@ -114,6 +121,13 @@ module.exports = grammar({
       choice($.num, '*'),
       ']',
       $._type
+    ),
+
+    func_call: $ => seq(
+      $.resolve,
+      '(',
+      $.param_list,
+      ')'
     ),
 
     ident: $ => /[a-zA-Z_][a-zA-Z_0-9]*/,
