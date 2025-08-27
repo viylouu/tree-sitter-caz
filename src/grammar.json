@@ -459,16 +459,8 @@
           "name": "resolve"
         },
         {
-          "type": "STRING",
-          "value": "("
-        },
-        {
           "type": "SYMBOL",
           "name": "param_list"
-        },
-        {
-          "type": "STRING",
-          "value": ")"
         }
       ]
     },

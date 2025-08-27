@@ -126,9 +126,7 @@ module.exports = grammar({
 
     func_call: $ => seq(
       $.resolve,
-      '(',
-      $.param_list,
-      ')'
+      $.param_list
     ),
 
     string_lit: $ => token(seq(
