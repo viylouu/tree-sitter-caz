@@ -24,6 +24,10 @@
         {
           "type": "SYMBOL",
           "name": "preproc_pkg"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "preproc_extern"
         }
       ]
     },
@@ -85,6 +89,48 @@
     "package_lib": {
       "type": "STRING",
       "value": "#lib"
+    },
+    "preproc_extern": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#extern"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ident"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "const_decl"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "decl_param_list"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ">>"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_type"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
     "resolve": {
       "type": "SEQ",

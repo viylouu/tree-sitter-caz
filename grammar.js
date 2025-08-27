@@ -15,7 +15,7 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat(choice($._preproc, $._decl)),
 
-    _preproc: $ => choice($.preproc_pkg),
+    _preproc: $ => choice($.preproc_pkg, $.preproc_extern),
 
     preproc_pkg: $ => seq(
       choice($.package_imp, $.package_lib),
@@ -30,6 +30,17 @@ module.exports = grammar({
 
     package_imp: $ => '#imp',
     package_lib: $ => '#lib',
+
+    preproc_extern: $ => seq(
+      '#extern',
+      $.ident,
+      $.const_decl,
+      $.decl_param_list,
+      optional(seq(
+        '>>',
+        $._type
+      )),
+    ),
 
     resolve: $ => seq(
       $.ident,

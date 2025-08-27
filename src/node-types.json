@@ -208,6 +208,41 @@
     }
   },
   {
+    "type": "preproc_extern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "const_decl",
+          "named": true
+        },
+        {
+          "type": "decl_param_list",
+          "named": true
+        },
+        {
+          "type": "fixed_array_type",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "prim_type",
+          "named": true
+        },
+        {
+          "type": "slice_type",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "preproc_pkg",
     "named": true,
     "fields": {},
@@ -271,6 +306,10 @@
           "named": true
         },
         {
+          "type": "preproc_extern",
+          "named": true
+        },
+        {
           "type": "preproc_pkg",
           "named": true
         }
@@ -314,11 +353,19 @@
           "named": true
         },
         {
+          "type": "preproc_extern",
+          "named": true
+        },
+        {
           "type": "preproc_pkg",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "#extern",
+    "named": false
   },
   {
     "type": "(",
