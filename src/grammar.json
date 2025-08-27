@@ -23,11 +23,11 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "preproc_imp"
+          "name": "preproc_pkg"
         }
       ]
     },
-    "preproc_imp": {
+    "preproc_pkg": {
       "type": "SEQ",
       "members": [
         {
@@ -35,11 +35,11 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "import_imp"
+              "name": "package_imp"
             },
             {
               "type": "SYMBOL",
-              "name": "import_lib"
+              "name": "package_lib"
             }
           ]
         },
@@ -78,11 +78,11 @@
         }
       ]
     },
-    "import_imp": {
+    "package_imp": {
       "type": "STRING",
       "value": "#imp"
     },
-    "import_lib": {
+    "package_lib": {
       "type": "STRING",
       "value": "#lib"
     },

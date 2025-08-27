@@ -208,7 +208,7 @@
     }
   },
   {
-    "type": "preproc_imp",
+    "type": "preproc_pkg",
     "named": true,
     "fields": {},
     "children": {
@@ -220,11 +220,11 @@
           "named": true
         },
         {
-          "type": "import_imp",
+          "type": "package_imp",
           "named": true
         },
         {
-          "type": "import_lib",
+          "type": "package_lib",
           "named": true
         },
         {
@@ -271,7 +271,7 @@
           "named": true
         },
         {
-          "type": "preproc_imp",
+          "type": "preproc_pkg",
           "named": true
         }
       ]
@@ -314,7 +314,7 @@
           "named": true
         },
         {
-          "type": "preproc_imp",
+          "type": "preproc_pkg",
           "named": true
         }
       ]
@@ -389,15 +389,15 @@
     "named": true
   },
   {
-    "type": "import_imp",
-    "named": true
-  },
-  {
-    "type": "import_lib",
-    "named": true
-  },
-  {
     "type": "num",
+    "named": true
+  },
+  {
+    "type": "package_imp",
+    "named": true
+  },
+  {
+    "type": "package_lib",
     "named": true
   },
   {
