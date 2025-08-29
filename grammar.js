@@ -21,7 +21,7 @@ module.exports = grammar({
       choice($.package_imp, $.package_lib),
       '<',
       $.resolve,
-      optional(seq('::', '*')),
+      optional(seq('::', '\\*')),
       '>',
       optional(seq(
         'as',
@@ -48,7 +48,7 @@ module.exports = grammar({
       $.param_list
     ),
 
-    resolve: $ => prec.left(seq(
+    resolve: $ => prec.right(seq(
       $.ident,
       repeat(seq('::', $.ident))
     )),
