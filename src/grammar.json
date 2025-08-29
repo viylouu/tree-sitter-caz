@@ -107,7 +107,7 @@
         },
         {
           "type": "STRING",
-          "value": "\\*"
+          "value": "*"
         }
       ]
     },

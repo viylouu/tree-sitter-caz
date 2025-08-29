@@ -29,7 +29,7 @@ module.exports = grammar({
       ))
     ),
 
-    import_package_all: $ => seq('::', '\\*'),
+    import_package_all: $ => seq('::', '*'),
 
     package_imp: $ => '#imp',
     package_lib: $ => '#lib',
