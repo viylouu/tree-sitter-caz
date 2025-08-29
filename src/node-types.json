@@ -182,11 +182,6 @@
     }
   },
   {
-    "type": "import_package_all",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "mut_decl",
     "named": true,
     "fields": {},
@@ -312,10 +307,6 @@
       "types": [
         {
           "type": "ident",
-          "named": true
-        },
-        {
-          "type": "import_package_all",
           "named": true
         },
         {

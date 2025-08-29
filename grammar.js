@@ -21,15 +21,12 @@ module.exports = grammar({
       choice($.package_imp, $.package_lib),
       '<',
       $.resolve,
-      optional($.import_package_all),
       '>',
       optional(seq(
         'as',
         $.ident
       ))
     ),
-
-    import_package_all: $ => seq('::', '*'),
 
     package_imp: $ => '#imp',
     package_lib: $ => '#lib',
@@ -52,7 +49,8 @@ module.exports = grammar({
 
     resolve: $ => prec.right(seq(
       $.ident,
-      repeat(seq('::', $.ident))
+      repeat(seq('::', $.ident)),
+      optional(seq('::', '*'))
     )),
 
     _expr: $ => choice(
