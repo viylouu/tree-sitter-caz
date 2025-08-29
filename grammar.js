@@ -50,8 +50,10 @@ module.exports = grammar({
     resolve: $ => prec.right(seq(
       $.ident,
       repeat(seq('::', $.ident)),
-      optional(seq('::', '*'))
+      optional($.resolve_all)
     )),
+
+    resolve_all: $ => seq('::', '*'),
 
     _expr: $ => choice(
       $.ident,

@@ -179,17 +179,8 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": "::"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "*"
-                  }
-                ]
+                "type": "SYMBOL",
+                "name": "resolve_all"
               },
               {
                 "type": "BLANK"
@@ -198,6 +189,19 @@
           }
         ]
       }
+    },
+    "resolve_all": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "::"
+        },
+        {
+          "type": "STRING",
+          "value": "*"
+        }
+      ]
     },
     "_expr": {
       "type": "CHOICE",

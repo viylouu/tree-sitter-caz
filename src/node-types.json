@@ -340,9 +340,18 @@
         {
           "type": "ident",
           "named": true
+        },
+        {
+          "type": "resolve_all",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "resolve_all",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "scope",
