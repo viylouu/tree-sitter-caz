@@ -63,17 +63,8 @@
           "type": "CHOICE",
           "members": [
             {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "::"
-                },
-                {
-                  "type": "STRING",
-                  "value": "\\*"
-                }
-              ]
+              "type": "SYMBOL",
+              "name": "import_package_all"
             },
             {
               "type": "BLANK"
@@ -104,6 +95,19 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "import_package_all": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "::"
+        },
+        {
+          "type": "STRING",
+          "value": "\\*"
         }
       ]
     },

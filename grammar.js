@@ -21,13 +21,15 @@ module.exports = grammar({
       choice($.package_imp, $.package_lib),
       '<',
       $.resolve,
-      optional(seq('::', '\\*')),
+      optional($.import_package_all),
       '>',
       optional(seq(
         'as',
         $.ident
       ))
     ),
+
+    import_package_all: $ => seq('::', '\\*'),
 
     package_imp: $ => '#imp',
     package_lib: $ => '#lib',
